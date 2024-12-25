@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Fireworks</title>
+    <link rel="stylesheet" href="firework.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="button.css">
+</head>
+<style>
+    * {
+        font-family: "Inconsolata", serif;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        min-height: 100vh;
+        background: #343f4f;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+    }
+    .container {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+    }
+    
+    .container span {
+        display: block;
+    }
+
+    .text1 {
+        font-size: 60px;
+        color: whitesmoke;
+        font-weight: 700;
+        letter-spacing: 8px;
+        margin-bottom: 20px;
+        background:#343f4f ;
+        position: relative;
+        animation: text 4s 1;
+        animation-fill-mode: forwards;
+    }
+    .text2 {
+        font-size: 30px;
+        color: orange;
+        animation-fill-mode: forwards;
+    }
+    
+    .text3{
+        font-size: 60px;
+        background: -webkit-linear-gradient(#343f4f,lightcoral);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: fadeIn 4s 1;
+        animation-delay: 4s;
+        opacity: 0; 
+        animation-fill-mode: forwards;
+        opacity: 0;
+        margin-top: 40px;
+        font-family:"Inconsolata", serif;
+        font-weight: 600;
+    }
+
+    @keyframes text {
+        0% {
+            color: #343f4f;
+            margin-bottom: -40px;
+        }
+        30%{
+            letter-spacing: 25px;
+            margin-bottom: -40px;
+        }
+        85%{
+            letter-spacing: 8px;
+            margin-bottom: -40px;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }  
+    .decorations{
+        position: fixed; 
+        bottom: 0; 
+        left: 0; 
+        z-index: 10; /
+    }
+    .tree {
+        width: 300px; 
+        height: auto; 
+    }
+
+</style>
+<body>
+    
+    <div class="container">
+        <span class="text1">MERRY CHRISTMAS</span>
+        <span class="text2">And</span>
+        <span class="text3">HAPPY NEW YEAR</span>
+    </div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div> 
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="decorations">
+        <img src="images/christmas tree.gif" alt="Christmas Tree" class="tree">
+    </div>
+
+    <div class="button" onclick="toggleAudio()">
+        <div class="app">
+            <div class="pause active">
+                <div class="line line_1"></div>
+                <div class="line line_2"></div> 
+            </div>
+            <div class="play">
+                <div class="line line_1"></div>
+                <div class="line line_2"></div>
+                <div class="line line_3"></div>
+            </div>
+        </div>
+    </div>
+    <audio id="audioPlayer" src="audio/Lastchristmas.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
